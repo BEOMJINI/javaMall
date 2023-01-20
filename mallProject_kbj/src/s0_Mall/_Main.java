@@ -13,5 +13,6 @@ public class _Main {
 		AdminController.getInstance().init();
 		ItemController.getInstance().init();
 		MallController.getInstance().mallMenu();
+		System.out.println("dev에서 수정");
 	}
 }
