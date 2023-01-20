@@ -30,6 +30,7 @@ public class Util {
 		int price = 0;
 		while (true) {
 			try {
+				System.out.print("# Price ->  ");
 				price = sc.nextInt();
 				if (price <= 0) {
 					System.out.println("0보다 큰 값 입력해주세요.");
@@ -41,8 +42,10 @@ public class Util {
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("숫자만 입력 해주세요.");
+				sc.nextLine();
 				continue;
 			}
+			return price;
 		}
 
 	}

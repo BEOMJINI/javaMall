@@ -5,7 +5,7 @@ public class Item {
 	private String categoryName;
 	private String name;
 	private int price;
-	int num1 =50;
+	
 	public Item(int num, String categoryName, String name, int price) {
 		super();
 		this.num = num;

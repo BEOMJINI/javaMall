@@ -43,6 +43,7 @@ public class MallController {
 					aCon.adminMenu();
 				} else {
 					System.out.printf("\n[%s 로그인]\n", loginId);
+					mCon.memberMenu();
 				}
 			} else if (sel == 2) {
 				mCon.joinMenu();

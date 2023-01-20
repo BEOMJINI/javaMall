@@ -72,4 +72,12 @@ public class MemberDAO {
 		mNum++;
 		return mNum;
 	}
+	
+//	/** 멤버 0명 체크 */
+//	public boolean checkMSize() {
+//		if (mlist.size() == 0) {
+//			return true;
+//		}
+//		return false;
+//	}
 }

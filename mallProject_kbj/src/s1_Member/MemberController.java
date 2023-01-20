@@ -2,6 +2,7 @@ package s1_Member;
 
 import java.util.Scanner;
 
+import s2_Item.ItemController;
 import s_Util.Util;
 
 public class MemberController {
@@ -16,6 +17,7 @@ public class MemberController {
 
 	private MemberDAO mDao; // = new MemberDAO();
 	private Scanner sc;
+	private ItemController iCon;
 
 	// 로그인 메뉴 , 회원가입 메뉴 , init
 	// setAdmin
@@ -23,6 +25,7 @@ public class MemberController {
 		mDao = new MemberDAO();
 		mDao.getMlist().add(new Member(1, "admin", "admin", "admin"));
 		sc = Util.sc;
+		iCon = ItemController.getInstance();
 	}
 
 //	/** admin 세팅 */
@@ -72,6 +75,26 @@ public class MemberController {
 	/** admin회원관리 1.회원목록 출력 */
 	public void printMember() {
 		System.out.println("\n[회원목록]");
+//		if(mDao.checkMSize()==true) {
+//			System.out.println("등록된 회원이 없습니다.");
+//		}
 		System.out.println(mDao.toString());
+	}
+	
+	public void memberMenu() {
+		while(true) {
+			System.out.println("\n____________MEMBER____________");
+			System.out.println("[0]종료 [1]쇼핑 [2]장바구니 [3]게시판");
+			int sel = Util.getValue(0, 3);
+			if(sel ==0) {
+				break;
+			}else if (sel==1) {
+				iCon.memberShoppingMeun();
+			}else if (sel==2) {
+				
+			}else if (sel==3) {
+				
+			}
+		}
 	}
 }
