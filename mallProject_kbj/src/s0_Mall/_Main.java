@@ -14,5 +14,7 @@ public class _Main {
 		ItemController.getInstance().init();
 		MallController.getInstance().mallMenu();
 		System.out.println("dev에서 수정");
+		System.out.println("dev에서 수정");
+		System.out.println("dev에서 수정");
 	}
 }
