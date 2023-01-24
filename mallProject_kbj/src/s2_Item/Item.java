@@ -5,7 +5,7 @@ public class Item {
 	private String categoryName;
 	private String name;
 	private int price;
-	
+
 	public Item(int num, String categoryName, String name, int price) {
 		super();
 		this.num = num;
@@ -46,5 +46,9 @@ public class Item {
 		this.price = price;
 	}
 
-	
+	public String toString() {
+		String s = String.format("[%-6d] [%10s] [%10s] [%10d]", num, categoryName, name, price);
+		return s;
+	}
+
 }

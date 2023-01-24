@@ -3,6 +3,8 @@ package s1_Member;
 import java.util.Scanner;
 
 import s2_Item.ItemController;
+import s4_Cart.CartController;
+import s5_Board.BoardController;
 import s_Util.Util;
 
 public class MemberController {
@@ -18,6 +20,8 @@ public class MemberController {
 	private MemberDAO mDao; // = new MemberDAO();
 	private Scanner sc;
 	private ItemController iCon;
+	private CartController cCon;
+	private BoardController bCon;
 
 	// 로그인 메뉴 , 회원가입 메뉴 , init
 	// setAdmin
@@ -26,6 +30,8 @@ public class MemberController {
 		mDao.getMlist().add(new Member(1, "admin", "admin", "admin"));
 		sc = Util.sc;
 		iCon = ItemController.getInstance();
+		cCon = CartController.getInstance();
+		bCon = BoardController.getInstance();
 	}
 
 //	/** admin 세팅 */
@@ -91,9 +97,9 @@ public class MemberController {
 			}else if (sel==1) {
 				iCon.memberShoppingMeun();
 			}else if (sel==2) {
-				
+				cCon.printCart();
 			}else if (sel==3) {
-				
+				bCon.printBoard();
 			}
 		}
 	}

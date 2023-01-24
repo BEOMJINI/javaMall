@@ -2,6 +2,7 @@ package s3_Admin;
 
 import s1_Member.MemberController;
 import s2_Item.ItemController;
+import s4_Cart.CartController;
 import s_Util.Util;
 
 public class AdminController {
@@ -16,17 +17,19 @@ public class AdminController {
 
 	private MemberController mCon;
 	private ItemController iCon;
+	private CartController cCon;
 	
 	public void init() {
 		mCon = MemberController.getInstance();
 		iCon = ItemController.getInstance();
+		cCon = CartController.getInstance();
 	}
 
 	/** admin 메뉴 페이지 */
 	public void adminMenu() {
 		while (true) {
-			System.out.println("\n_________________ADMIN_________________");
-			System.out.println("[0]뒤로가기 [1]회원관리 [2]상품관리 [3]장바구니관리");
+			System.out.println("\n_______________________ADMIN_______________________");
+			System.out.println("[0]뒤로가기 [1]회원관리 [2]상품관리 [3]장바구니관리 [4]게시판관리");
 			int sel = Util.getValue(0, 3);
 			if (sel == 0) {
 				break;
@@ -36,6 +39,8 @@ public class AdminController {
 				adminItem();
 			} else if (sel == 3) {
 				adminCart();
+			} else if (sel ==4) {
+				adminBoard();
 			}
 		}
 	}
@@ -51,7 +56,7 @@ public class AdminController {
 			} else if (sel == 1) {
 				mCon.printMember();
 			} else if (sel == 2) {
-
+				cCon.printBuy();
 			}
 		}
 	}
@@ -83,8 +88,26 @@ public class AdminController {
 			if (sel == 0) {
 				break;
 			} else if (sel == 1) {
-
+				cCon.printAdminCart();
 			}
+		}
+	}
+	
+	public void adminBoard() {
+		while (true) {
+			System.out.println("\n_____ADMIN 게시판관리______");
+			System.out.println("[0]뒤로가기 [1]전체 게시판목록 [2]공지작성 [3]게시글삭제");
+			int sel = Util.getValue(0, 3);
+			if(sel ==0) {
+				break;
+			}else if(sel==1) {
+				
+			}else if(sel==2) {
+				
+			}else if(sel==3) {
+				
+			}
+		
 		}
 	}
 

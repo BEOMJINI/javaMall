@@ -15,20 +15,26 @@ public class ItemDAO {
 		cNum = 100;
 		categoryset = new TreeSet<>();
 		//categorylist = new ArrayList<>();
+		ilist.add(new Item(Num(), "음료", "콜라", 1000));
+		ilist.add(new Item(Num(), "음료", "사이다", 2000));
+		ilist.add(new Item(Num(), "과자", "나초", 3000));
+		ilist.add(new Item(Num(), "과자", "새우깡", 4000));
+		
 	}
 
-	@Override
-	public String toString() {
-		String s = "";
-//		if (ilist.size() == 0) {
-//			System.out.println("등록된 상품이 없습니다.");
+//	@Override
+//	public String toString() {
+//		String s = "";
+////		if (ilist.size() == 0) {
+////			System.out.println("등록된 상품이 없습니다.");
+////		}
+//		for (Item m : ilist) {
+//			s += "[NUM] " + m.getNum() + " [ID] " + m.getCategoryName() + " [PW] " + m.getName() + " [NAME] "
+//					+ m.getPrice() + "원" + "\n";
 //		}
-		for (Item m : ilist) {
-			s += "[NUM] " + m.getNum() + " [ID] " + m.getCategoryName() + " [PW] " + m.getName() + " [NAME] "
-					+ m.getPrice() + "원" + "\n";
-		}
-		return s;
-	}
+//		return s;
+//		
+//	}
 
 	
 	public ArrayList<Item> getIlist() {

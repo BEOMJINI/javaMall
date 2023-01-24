@@ -51,4 +51,10 @@ public class MallController {
 			}
 		}
 	}
+
+	public String getLoginId() {
+		return loginId;
+	}
+	
+	
 }
