@@ -3,6 +3,8 @@ package s3_Admin;
 import s1_Member.MemberController;
 import s2_Item.ItemController;
 import s4_Cart.CartController;
+import s5_Board.BoardController;
+import s5_Board.BoardDAO;
 import s_Util.Util;
 
 public class AdminController {
@@ -18,11 +20,13 @@ public class AdminController {
 	private MemberController mCon;
 	private ItemController iCon;
 	private CartController cCon;
+	private BoardController bCon;
 	
 	public void init() {
 		mCon = MemberController.getInstance();
 		iCon = ItemController.getInstance();
 		cCon = CartController.getInstance();
+		bCon = BoardController.getInstance();
 	}
 
 	/** admin 메뉴 페이지 */
@@ -30,7 +34,7 @@ public class AdminController {
 		while (true) {
 			System.out.println("\n_______________________ADMIN_______________________");
 			System.out.println("[0]뒤로가기 [1]회원관리 [2]상품관리 [3]장바구니관리 [4]게시판관리");
-			int sel = Util.getValue(0, 3);
+			int sel = Util.getValue(0, 4);
 			if (sel == 0) {
 				break;
 			} else if (sel == 1) {
@@ -101,11 +105,11 @@ public class AdminController {
 			if(sel ==0) {
 				break;
 			}else if(sel==1) {
-				
+				bCon.adminPrintBoard();
 			}else if(sel==2) {
-				
+				bCon.addNotice();
 			}else if(sel==3) {
-				
+				bCon.deleteBoard();
 			}
 		
 		}
